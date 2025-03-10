@@ -2,6 +2,9 @@ cmake_minimum_required (VERSION 2.8.5)
 cmake_policy (SET CMP0054 NEW)
 project (Sponge)
 
+set (CMAKE_CXX_STANDARD 23)
+set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 include (etc/build_defs.cmake)
 include (etc/build_type.cmake)
 include (etc/cflags.cmake)

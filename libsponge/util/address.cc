@@ -6,6 +6,7 @@
 #include <cstring>
 #include <memory>
 #include <netdb.h>
+#include <array>
 #include <stdexcept>
 #include <system_error>
 
