@@ -13,7 +13,7 @@ void DUMMY_CODE(Targs &&... /* unused */) {}
 using namespace std;
 
 ByteStream::ByteStream(const size_t capacity) {
-    _buffer.reserve(capacity);
+    _buffer.resize(capacity, 0);
     _capacity = capacity;
 }
 
@@ -49,12 +49,12 @@ string ByteStream::peek_output(const size_t len) const {
     size_t read_offset = _r_offset;
     std::string output;
 
-    output.reserve(out_len);
+    output.resize(out_len);
 
     // cannot fill with index? although reserved, it is not initialized, size == 0
     for (size_t i = 0; i < out_len; ++i) {
-        // output.data()[i] = _buffer[read_offset % _capacity];
-        output.push_back(_buffer[read_offset % _capacity]);
+        output[i] = _buffer[read_offset % _capacity];
+        // output.push_back(_buffer[read_offset % _capacity]);
         read_offset++;
     }
 
