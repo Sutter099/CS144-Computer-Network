@@ -11,10 +11,18 @@
 class StreamReassembler {
   private:
     // Your code here -- add private members as necessary.
-
+    std::vector<bool> _bitmap;
+    std::vector<char> _buffer;
     ByteStream _output;  //!< The reassembled in-order byte stream
+    uint64_t _idx_unaccept;
+    uint64_t _idx_unread;
+    uint64_t _idx_unasm;
+    size_t _num_unasm;
     size_t _capacity;    //!< The maximum number of bytes
+    bool _eof;
 
+    size_t ContinuousEnd();
+    size_t CountData();
   public:
     //! \brief Construct a `StreamReassembler` that will store up to `capacity` bytes.
     //! \note This capacity limits both the bytes that have been reassembled,
