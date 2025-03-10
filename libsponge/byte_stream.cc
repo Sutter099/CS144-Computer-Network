@@ -19,15 +19,16 @@ ByteStream::ByteStream(const size_t capacity) {
 
 size_t ByteStream::write(const string &data) {
     size_t remain_len = remaining_capacity();
+    size_t data_len = data.size();
 
     // 1. check full
     if (!remain_len)
         return 0;
-    if (_empty)
+    if (_empty && data_len > 0)
         _empty = false;
 
     // 2. write available, update flag and info
-    size_t written = std::min(remain_len, data.size());
+    size_t written = std::min(remain_len, data_len);
     for (size_t i = 0; i < written; ++i) {
         _buffer[_w_offset % _capacity] = data[i];
         _w_offset++;
