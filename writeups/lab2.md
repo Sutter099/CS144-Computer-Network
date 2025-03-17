@@ -1,11 +1,11 @@
 Lab 2 Writeup
 =============
 
-My name: [your name here]
+My name: [Huang Ze]
 
 My SUNet ID: [your sunetid here]
 
-This lab took me about [n] hours to do. I [did/did not] attend the lab session.
+This lab took me about [5] hours to do. I [did/did not] attend the lab session.
 
 I worked with or talked about this assignment with: [please list other sunetids]
 
@@ -18,7 +18,7 @@ Implementation Challenges:
 Remaining Bugs:
 []
 
-- Optional: I had unexpected difficulty with: [describe]
+- Optional: I had unexpected difficulty with: [boundary situation to take me so much time to debug]
 
 - Optional: I think you could make this lab better by: [describe]
 
