@@ -53,9 +53,6 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
     std::string output, output1, output2;
     uint64_t idx_stop;
 
-    // 1. check if out of bound
-    if (index > _idx_unaccept)
-        return;
     if (eof)
         _eof = true;
 
